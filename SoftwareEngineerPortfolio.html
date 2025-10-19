@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nejla Mulayim | Yazılım Mühendisliği Portfolyo CV</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (React'tekine benzer ikonları kullanmak için) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Proje genelinde kullanılan font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* bg-gray-50 */
+        }
+        /* Basit fade in animasyonu */
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.5; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-container" class="min-h-screen bg-gray-50">
+        <!-- Navbar ve İçerik buraya JavaScript ile yüklenecek -->
+    </div>
+
+    <script>
+        // --- SABİT KİŞİSEL VERİLER ---
+        const userProfile = {
+            name: "Nejla Mulayim",
+            title: "Yazılım Mühendisliği Öğrencisi | 3. Sınıf",
+            summary: "Öğrenme odaklı, problem çözme yeteneği yüksek ve tam yığın geliştirme konularına tutkuyla bağlı 3. sınıf yazılım mühendisliği öğrencisiyim. Özellikle React, Node.js ve modern veritabanı teknolojileri üzerinde çalışmaktan keyif alıyorum. Akademik bilgimi gerçek dünya projelerine dönüştürerek staj ve mezuniyet sonrası pozisyonlarda değer katmayı hedefliyorum.",
+            contact: {
+                email: "ntysoftware@gmail.com",
+                location: "Türkiye",
+                linkedin: "http://linkedin.com/in/nejla-mulayim",
+                github: "https://github.com/nejlamulayim11",
+            },
+            skills: [
+                { category: "Diller", items: ["C", "C++", "Python", "JavaScript", "SQL"] },
+                { category: "Frontend", items: ["HTML5", "CSS3", "React", "Tailwind CSS", "Redux (Temel)"] },
+                { category: "Backend & DB", items: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "REST APIs"] },
+            ],
+            education: [
+                {
+                    degree: "Yazılım Mühendisliği, B.Sc.",
+                    institution: "Lefke Avrupa Üniversitesi",
+                    years: "2022 - 2027 (Beklenen)",
+                    details: "Web Geliştirme Teknolojileri, Veri Yapıları, Algoritmalar ve İşletim Sistemleri gibi temel derslerde başarı. (JavaScript/Frontend konularına odaklanılmıştır).",
+                },
+                {
+                    degree: "Lise Diploması",
+                    institution: "Gaziantep Kolej Vakfı Anadolu Lisesi",
+                    years: "2017 - 2021",
+                    details: "Sayısal bölüm",
+                },
+            ],
+            experience: [
+                {
+                    title: "Stajyer Mühendis",
+                    company: "BADEX LTD.",
+                    years: "Haziran 2024 - Ağustos 2024",
+                    details: [
+                        "Staj dönemi boyunca yürütülen teknik çalışmalar ve öğrenilen teknolojiler üzerine detaylı bir raporu hazırladım ve yönetime sundum.",
+                    ],
+                },
+            ],
+            projects: [
+                {
+                    name: "Akıllı Otopark Takip Sistemi",
+                    description: "C++ kullanarak araç giriş/çıkış, kapasite yönetimi ve yer tahsisi gibi temel otopark mantığının konsol tabanlı simülasyonu. HTML ve CSS ile anlık doluluk durumunu gösteren basit bir görsel arayüz oluşturulmuştur.",
+                    technologies: ["C++", "HTML5", "CSS3", "Veri Yapıları", "Simülasyon"],
+                },
+                {
+                    name: "Gelişmiş Veri Yapıları Uygulaması",
+                    description: "C++ kullanarak Hash Tabloları, Dengeli İkili Arama Ağaçları (AVL/Red-Black) ve Graf Algoritmalarının (Dijkstra, BFS/DFS) sıfırdan implementasyonu. Performans analizleri yapılmıştır.",
+                    technologies: ["C++", "Veri Yapıları", "Algoritmalar", "Terminal Arayüzü"],
+                },
+                {
+                    name: "Basit Kullanıcı Kaydı ve Takvim Uygulaması",
+                    description: "Temel HTML5 ve CSS3 ile tasarlanmış, JavaScript ile dinamizm katılmış basit bir Kullanıcı Kayıt/Giriş ve Etkinlik Takvimi arayüzü. (Veritabanı bağlantısı simülasyonu C ile yapılmıştır).",
+                    technologies: ["C", "HTML5", "CSS3", "JavaScript", "Temel Veri Saklama"],
+                },
+                {
+                    name: "Yapay Zeka Destekli Not Alma Uygulaması",
+                    description: "Kullanıcının notlarını özetlemek ve anahtar kelimeleri çıkarmak için Python ve küçük bir makine öğrenimi modeli (temel NLP) kullanan masaüstü uygulaması.",
+                    technologies: ["Python", "Flask", "SQLite", "NLP (Temel)"],
+                },
+                {
+                    name: "Temel Makine Öğrenimi Uygulamaları Koleksiyonu",
+                    description: "Yeni başlayanlar için popüler veri setleri (Titanic, Iris vb.) üzerinde temel seviye regresyon, sınıflandırma ve kümeleme algoritmalarının Python ile uygulanması.",
+                    technologies: ["Python", "Scikit-learn", "Pandas", "Temel ML Algoritması"],
+                },
+                {
+                    name: "Basit Yapılacaklar (To-Do) Listesi Uygulaması",
+                    description: "Günlük görevleri takip etmek için geliştirilmiş, yerel depolama kullanan (veya bir C/C++ arka ucu simüle eden) basit bir web tabanlı To-Do listesi uygulaması.",
+                    technologies: ["HTML", "CSS", "JavaScript", "Yerel Depolama/Simülasyon"],
+                },
+            ]
+        };
+
+        const NAV_ITEMS = [
+            { id: 'anasayfa', label: 'Ana Sayfa', icon: 'Home' },
+            { id: 'hakkinda', label: 'Hakkında', icon: 'Zap' },
+            { id: 'projeler', label: 'Projeler', icon: 'LayoutGrid' },
+            { id: 'egitim', label: 'Eğitim & Deneyim', icon: 'TrendingUp' },
+            { id: 'iletisim', label: 'İletişim', icon: 'Mail' },
+        ];
+
+        let currentSection = 'anasayfa';
+        let clickCount = 0; // Tıklama sayacı state'i
+
+        // --- YARDIMCI VE BÖLÜM RENDER FONKSİYONLARI ---
+
+        // Lucide ikonu oluşturan fonksiyon
+        const getIconSvg = (iconName, classes) => {
+            // Bu fonksiyon artık doğrudan SVG dizesi döndürmek yerine,
+            // Lucide kütüphanesinin otomatik dönüştüreceği <i> etiketini döndürür (data-lucide özniteliği ile).
+            // Bu, .toSvg() hatasını çözer. createIcons() çağrısı DOM yüklendikten sonra yapılacaktır.
+            return `<i data-lucide="${iconName}" class="${classes}"></i>`;
+        };
+
+        // Başlık oluşturan fonksiyon
+        const renderSectionTitle = (iconName, title) => `
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 border-b border-pink-300/80 pb-2 flex items-center space-x-3">
+                ${getIconSvg(iconName, "w-5 h-5 sm:w-6 sm:h-6 text-pink-600")}
+                <span>${title}</span>
+            </h2>
+        `;
+
+        // Proje Kartı oluşturan fonksiyon
+        const renderProjectCard = (project) => `
+            <div class="project-card p-5 sm:p-6 rounded-xl shadow-md border border-gray-200 transition duration-500 cursor-default bg-white h-full flex flex-col hover:translate-y-[-5px] hover:shadow-2xl hover:border-pink-500"
+                 data-hover-state="false"
+                 onmouseover="this.style.boxShadow='0 12px 25px rgba(0, 0, 0, 0.15)'; this.querySelector('h3').style.color='#9D174D';"
+                 onmouseout="this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.05)'; this.querySelector('h3').style.color='#111827';"
+            >
+                <h3 class="text-lg sm:text-xl font-bold transition duration-300 text-gray-900 mb-2">
+                    ${project.name}
+                </h3>
+                <p class="text-gray-700 leading-relaxed text-sm flex-grow mb-2">${project.description}</p>
+            </div>
+        `;
+
+        // Footer oluşturan fonksiyon
+        const renderFooter = () => `
+            <footer class="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500 text-xs sm:text-sm">
+                <p>
+                    Bu Portfolyo CV, Yazılım Mühendisliği Öğrencisi (${userProfile.name}) tarafından Vanilla JavaScript ve Tailwind CSS ile tamamen responsive olarak oluşturulmuştur.
+                </p>
+                <div 
+                    id="click-counter"
+                    class="mt-2 inline-flex items-center space-x-1 p-2 rounded-full bg-pink-50 text-pink-600 hover:bg-pink-100 transition duration-200 cursor-pointer select-none border border-pink-200"
+                >
+                    ${getIconSvg('MousePointerClick', "w-4 h-4")}
+                    <span id="click-count-span" class="font-semibold">
+                        JS Dinamik Etkileşim: ${clickCount} kez tıklandı!
+                    </span>
+                </div>
+            </footer>
+        `;
+
+        // 1. ANA SAYFA
+        const renderHomePage = () => `
+            <section class="animate-fade-in">
+                <header class="py-12 bg-pink-100 shadow-2xl rounded-lg">
+                    <div class="text-center">
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 transition-transform duration-300 hover:scale-[1.02] cursor-default">
+                            ${userProfile.name}
+                        </h1>
+                        <p class="text-xl sm:text-2xl mt-2 font-light text-pink-700">${userProfile.title}</p>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg bg-pink-50 p-4 rounded-lg border border-pink-200 shadow-inner mt-6 max-w-4xl mx-auto">
+                            ${userProfile.summary}
+                        </p>
+                    </div>
+                </header>
+            </section>
+        `;
+
+        // 2. HAKKINDA (Özet ve Beceriler)
+        const renderAboutSection = () => `
+            <section class="animate-fade-in">
+                ${renderSectionTitle('Zap', 'Hakkımda & Beceriler')}
+                
+                <h3 class="text-lg font-semibold text-gray-800 mb-4 border-b border-gray-100 pb-2">Özet</h3>
+                <p class="text-gray-700 leading-relaxed text-base sm:text-lg bg-pink-50 p-4 rounded-lg border border-pink-200 shadow-inner">${userProfile.summary}</p>
+
+                <div class="mt-10">
+                    ${renderSectionTitle('Code', 'Teknik Beceriler (Skills)')}
+                    <div class="grid grid-cols-1 gap-4 sm:gap-6">
+                        ${userProfile.skills.map((skill) => `
+                            <div class="bg-white p-4 rounded-lg shadow-lg border-l-4 border-pink-400 transition-all duration-300 hover:shadow-xl hover:border-l-8">
+                                <h4 class="text-sm sm:text-lg font-bold text-gray-900 mb-2">${skill.category}</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    ${skill.items.map((item) => `
+                                        <span class="bg-pink-200 text-pink-800 text-xs font-medium px-2 py-0.5 rounded-full border border-pink-400 transition hover:bg-pink-300 cursor-default">
+                                            ${item}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+        `;
+
+        // 3. PROJELER
+        const renderProjectsSection = () => `
+            <section class="animate-fade-in">
+                ${renderSectionTitle('LayoutGrid', 'Önemli Projeler (Portfolyo)')}
+                <div class="grid grid-cols-1 gap-6 sm:gap-8">
+                    ${userProfile.projects.map(renderProjectCard).join('')}
+                </div>
+            </section>
+        `;
+
+        // 4. EĞİTİM VE DENEYİM
+        const renderEducationExperienceSection = () => `
+            <section class="animate-fade-in">
+                ${renderSectionTitle('TrendingUp', 'Deneyim & Eğitim')}
+                
+                <div class="grid grid-cols-1 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center space-x-2 border-b pb-2 border-gray-200">
+                        ${getIconSvg('Briefcase', "w-5 h-5 text-pink-600")}
+                        <span>İş Deneyimi & Stajlar</span>
+                        </h3>
+                        ${userProfile.experience.map((exp) => `
+                            <div class="mb-6 border-l-4 border-pink-400 pl-4 bg-white p-3 rounded-lg shadow-sm">
+                                <h4 class="text-lg font-semibold text-gray-900">${exp.title}</h4>
+                                <p class="text-pink-700 text-sm">${exp.company} | ${exp.years}</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-gray-600 text-sm">
+                                    ${exp.details.map((detail) => `<li>${detail}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center space-x-2 border-b pb-2 border-gray-200">
+                        ${getIconSvg('BookOpen', "w-5 h-5 text-pink-600")}
+                        <span>Eğitim Bilgileri</span>
+                        </h3>
+                        ${userProfile.education.map((edu) => `
+                            <div class="mb-6 border-l-4 border-gray-400 pl-4 bg-white p-3 rounded-lg shadow-sm">
+                                <h4 class="text-lg font-semibold text-gray-900">${edu.degree}</h4>
+                                <p class="text-gray-600 text-sm">${edu.institution} | ${edu.years}</p>
+                                <p class="text-sm mt-1 text-gray-500">${edu.details}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+        `;
+
+        // 5. İLETİŞİM
+        const renderContactSection = () => `
+            <section class="animate-fade-in text-center">
+                ${renderSectionTitle('Mail', 'İletişim Bilgileri')}
+                <div class="mt-8 flex flex-wrap justify-center space-x-4 sm:space-x-8 text-lg">
+                    
+                    <a href="mailto:${userProfile.contact.email}" class="text-gray-800 hover:text-pink-600 transition flex items-center space-x-2 mb-4 p-3 bg-pink-100 rounded-lg shadow-sm">
+                        ${getIconSvg('Mail', "w-5 h-5 text-pink-600")}
+                        <span class="font-medium">${userProfile.contact.email}</span>
+                    </a>
+                    
+                    <div class="text-gray-800 flex items-center space-x-2 mb-4 p-3 bg-pink-100 rounded-lg shadow-sm">
+                        ${getIconSvg('MapPin', "w-5 h-5 text-pink-600")}
+                        <span class="font-medium">${userProfile.contact.location}</span>
+                    </div>
+                    
+                    <a href="${userProfile.contact.linkedin}" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:text-pink-600 transition flex items-center space-x-2 mb-4 p-3 bg-pink-100 rounded-lg shadow-sm">
+                        ${getIconSvg('Linkedin', "w-5 h-5 text-pink-600")}
+                        <span class="font-medium">LinkedIn Profilim</span>
+                    </a>
+                    
+                    <a href="${userProfile.contact.github}" target="_blank" rel="noopener noreferrer" class="text-gray-800 hover:text-pink-600 transition flex items-center space-x-2 mb-4 p-3 bg-pink-100 rounded-lg shadow-sm">
+                        ${getIconSvg('Github', "w-5 h-5 text-pink-600")}
+                        <span class="font-medium">GitHub Profilim</span>
+                    </a>
+                </div>
+            </section>
+        `;
+
+
+        // --- ANA RENDER FONKSİYONU ---
+
+        const renderContent = () => {
+            switch (currentSection) {
+                case 'anasayfa':
+                    return renderHomePage();
+                case 'hakkinda':
+                    return renderAboutSection();
+                case 'projeler':
+                    return renderProjectsSection();
+                case 'egitim':
+                    return renderEducationExperienceSection();
+                case 'iletisim':
+                    return renderContactSection();
+                default:
+                    return renderHomePage();
+            }
+        };
+
+        const renderApp = () => {
+            const appContainer = document.getElementById('app-container');
+            const navItemsHtml = NAV_ITEMS.map(item => {
+                const isActive = currentSection === item.id;
+                return `
+                    <button
+                        data-section-id="${item.id}"
+                        class="nav-button px-3 py-2 rounded-md text-sm font-medium transition duration-300 flex items-center space-x-1 
+                        ${isActive
+                            ? 'bg-pink-300 text-pink-900 shadow-inner hover:bg-pink-400'
+                            : 'text-gray-600 hover:bg-pink-50 hover:text-pink-600'
+                        }
+                    ">
+                        ${getIconSvg(item.icon, "w-4 h-4")}
+                        <span class="hidden sm:inline">${item.label}</span>
+                    </button>
+                `;
+            }).join('');
+
+            appContainer.innerHTML = `
+                <!-- 1. Navbar -->
+                <nav class="sticky top-0 z-10 bg-white shadow-lg border-b border-pink-200/50" id="navbar">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between h-16">
+                            <!-- Sol Tarafta İsim Başlangıcı (Sadece Mobil/Küçük Ekranlarda) -->
+                            <div class="flex-shrink-0 flex items-center text-lg font-bold text-gray-900 sm:hidden">
+                                ${userProfile.name}
+                            </div>
+                            
+                            <!-- Sağ Tarafta Navigasyon Menüsü -->
+                            <div class="flex flex-1 justify-center sm:justify-end">
+                                <div class="flex space-x-2 sm:space-x-4">
+                                    ${navItemsHtml}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white shadow-xl rounded-b-xl min-h-[calc(100vh-64px)]">
+                    <main id="main-content">
+                        ${renderContent()}
+                    </main>
+                    ${renderFooter()}
+                </div>
+            `;
+
+            // After content is injected, convert <i> tags (with data-lucide) to SVG icons
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
+
+            // --- ETKİLEŞİM YÖNETİMİ ---
+
+            // 1. Navigasyon Dinleyicisi
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const newSection = e.currentTarget.getAttribute('data-section-id');
+                    if (newSection !== currentSection) {
+                        currentSection = newSection;
+                        renderApp(); // Sayfayı yeniden çizin
+                    }
+                });
+            });
+
+            // 2. Footer Tıklama Sayacı Dinleyicisi (Her render'da yeniden eklenmeli)
+            const clickCounterElement = document.getElementById('click-counter');
+            if (clickCounterElement) {
+                clickCounterElement.addEventListener('click', () => {
+                    clickCount++;
+                    document.getElementById('click-count-span').textContent = `JS Dinamik Etkileşim: ${clickCount} kez tıklandı!`;
+                });
+            }
+        };
+
+        // Uygulamayı DOM yüklendikten sonra başlat
+        document.addEventListener('DOMContentLoaded', renderApp);
+
+    </script>
+</body>
+</html>
